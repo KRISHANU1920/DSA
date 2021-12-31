@@ -4,6 +4,8 @@ using namespace std;
 int main()
 {
     int arr[] = {2, 6, 3, 5, 9, 4, 8};
+    //int arr[] = {1, 2, 3, 4, 5, 6, 7}; // best case
+    //int arr[] = {7, 6, 5, 4, 3, 2, 1}; // worst case
     int n = sizeof(arr)/sizeof(arr[0]);
     //applying selection sort
     for(int i=0; i<n-1; i++)
