@@ -71,4 +71,8 @@ int main()
 Time Complexity: O(Nlog(N))
 Space Complexity: O(N)
 
+Inplace Sort - No
+
+Stability - Stable
+
 */
