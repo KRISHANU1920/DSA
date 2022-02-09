@@ -59,12 +59,6 @@ Time Complexity:
 
 Space Complexity: O(N)
 
-Inplace Sort - QuickSort uses extra space for recursive function calls. 
-    It is called in-place according to broad definition as extra space 
-    required is not used to manipulate input, but only for recursive calls.
-
-Stability - Unstable
-
 */
 
 
