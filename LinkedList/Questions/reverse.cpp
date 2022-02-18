@@ -1,6 +1,6 @@
 // Question Link : https://practice.geeksforgeeks.org/problems/reverse-a-linked-list/1/
 
-// Iterative Approach:
+// Iterative Approach:-
 struct Node* reverseList(struct Node *head)
 {
     struct Node *prev = NULL, *next = NULL, *curr = head;
@@ -21,7 +21,7 @@ Space Complexity: O(1)
 
 */
 
-// Recursive Approach:
+// Recursive Approach:-
 struct Node* reverseList(struct Node *head)
 {
     // base case
