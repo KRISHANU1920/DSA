@@ -1,4 +1,4 @@
-// Question Link :
+// Question Link : https://practice.geeksforgeeks.org/problems/detect-loop-in-linked-list/1
 
 bool detectLoop(Node* head)
 {
