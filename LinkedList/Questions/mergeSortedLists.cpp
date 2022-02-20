@@ -5,11 +5,9 @@ ListNode* mergeTwoLists(ListNode* list1, ListNode* list2)
     ListNode* head = NULL;
     
     // if any list is empty
-    if(!list1 && !list2)
-        return NULL;
-    else if(!list1 && list2)
+    if(!list1)
         return list2;
-    else if(list1 && !list2)
+    else if(!list2)
         return list1;
     
     // if both are non-empty lists
