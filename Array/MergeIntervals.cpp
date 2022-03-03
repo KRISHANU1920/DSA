@@ -21,5 +21,5 @@ vector<vector<int>> merge(vector<vector<int>>& intervals)
 
 /*
 Time Complexity: O(N.Log(N))
-Space Complexity: not Defined, Depends on sort().
+Space Complexity: O(Log(N))
 */
