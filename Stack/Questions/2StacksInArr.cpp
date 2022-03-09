@@ -70,7 +70,7 @@ int twoStacks :: pop2()
 
 /*
 
-All Operations:-
+ All Operations:-
     Time Complexity: O(1)
     Space Complexity: O(1)
 
