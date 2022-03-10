@@ -70,7 +70,6 @@ Node* segregate(Node *head)
     }
     
     // merging three lists into one
-    head = zeroHead -> next;
     
     if(oneHead -> next != NULL)
         zeroTail -> next = oneHead -> next;
@@ -79,6 +78,9 @@ Node* segregate(Node *head)
         
     oneTail -> next = twoHead -> next;
     twoTail -> next = NULL;
+
+    // updating head
+    head = zeroHead -> next;
     
     // deleting dummy nodes
     delete zeroHead;
