@@ -19,4 +19,6 @@ int height(struct Node* node)
 Time Complexity: O(N)
 Space Complexity: O(height)
 
+Note: also known as Depth of Binary Tree
+
 */
