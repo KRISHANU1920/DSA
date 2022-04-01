@@ -40,7 +40,10 @@ vector<int> topView(Node *root)
 
 /*
 
-Time Complexity: O(N)
+Time Complexity: O(N.log(N))
+    where n is the number of nodes in the given binary tree
+    with each insertion operation in Map requiring O(log2n) complexity.
+    
 Space Complexity: O(N)
 
 */
