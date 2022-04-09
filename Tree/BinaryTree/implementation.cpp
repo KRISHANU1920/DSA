@@ -158,11 +158,11 @@ int main()
     inOrder(root);
 
     // preOrder Traversal
-    cout << endl << "In Order Traversal for the inserted Tree: " << endl;
+    cout << endl << "Pre Order Traversal for the inserted Tree: " << endl;
     preOrder(root);
 
     // PostOrder Traversal
-    cout << endl << "In Order Traversal for the inserted Tree: " << endl;
+    cout << endl << "Post Order Traversal for the inserted Tree: " << endl;
     postOrder(root);
 
     return 0;
