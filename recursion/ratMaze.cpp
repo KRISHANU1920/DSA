@@ -65,3 +65,55 @@ vector<string> findPath(vector<vector<int>> &m, int n) {
     sort(ans.begin(), ans.end());
     return ans;
 }
+
+
+
+
+
+// optimized code
+void solve(int i, int j, vector<vector<int>> &m, int n, vector<string> &ans, string move,
+            vector<vector<int>> &visited, int di[], int dj[])
+{
+    // base case
+    if(i == n-1 && j == n-1)
+    {
+        ans.push_back(move);
+        return ;
+    }
+    
+    string dir = "DLRU";
+    
+    for(int ind=0; ind<4; ind++)
+    {
+        int nexti = i + di[ind];
+        int nextj = j + dj[ind];
+        
+        if(nexti>=0 && nexti<n && nextj>=0 && nextj<n && !visited[nexti][nextj] & m[nexti][nextj]==1)
+        {
+            visited[i][j] = 1;
+            solve(nexti, nextj, m, n, ans, move + dir[ind], visited, di, dj);
+            visited[i][j] = 0;   // backtracking
+        }
+    }
+}
+vector<string> findPath(vector<vector<int>> &m, int n) 
+{
+    vector<string> ans;
+    vector<vector<int>> visited(n, vector<int> (n, 0));
+    
+    int di[] = {+1, 0, 0, -1};
+    int dj[] = {0, -1, +1, 0};
+    
+    if(m[0][0] == 1)
+        solve(0, 0, m, n, ans, "", visited, di, dj);
+    
+    return ans;
+}
+
+
+/*
+
+Time Complexity: O(4^(n*m))
+Space Complexity: O(n*m)
+
+*/
