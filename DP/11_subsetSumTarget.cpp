@@ -86,7 +86,8 @@ bool isSubsetSum(vector<int>arr, int sum)
     
     prev[0] = curr[0] = true;
     
-    prev[arr[0]] = true;
+    if(arr[0] <= sum)
+        prev[arr[0]] = true;
     
     for(int ind=1; ind<n; ind++)
     {
