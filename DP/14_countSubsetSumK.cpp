@@ -51,6 +51,22 @@ int findWays(vector<int> &num, int tar)
     return solve(n-1, tar, num, dp);
 }
 
+/*
+    Note: If num = {0, 0, 1} then the above code gives wrong output.
+
+    Solution:
+    1) remove the base case: if(sum == 0) return 1;
+    2) update the base case: 
+
+        if(ind == 0)
+        {
+            if(sum == 0 && arr[0] == 0) return 2;
+            if(sum == 0 || arr[0] == sum) return 1;
+            else return 0;
+        }
+
+*/
+
 
 // Tabulation Approach: [TC-O(N*sum) and SC-O(N*sum)]
 int findWays(vector<int> &num, int tar)
