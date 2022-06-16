@@ -101,3 +101,30 @@ long long int count(int S[], int m, int n)
     }
     return prev[n];
 } 
+
+
+// single Array Optimization
+long long int count(int S[], int m, int n) 
+{
+    vector<long long int> prev(n+1, 0);
+    
+    for(int amt=0; amt<=n; amt++)
+    {
+        if(amt % S[0] == 0)
+            prev[amt] = 1;
+    }
+    
+    for(int ind=1; ind<m; ind++)
+    {
+        for(int amt=0; amt<=n; amt++)
+        {
+            long long int notTake = prev[amt];
+            long long int take = 0;
+            if(S[ind] <= amt)
+                take = prev[amt-S[ind]];
+            
+            prev[amt] = take + notTake;
+        }
+    }
+    return prev[n];
+}
