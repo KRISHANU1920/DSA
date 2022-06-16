@@ -94,3 +94,5 @@ int countPartitions(int n, int d, vector<int> &arr)
 }
 
 
+// Another Question related to same pattern just change in representation
+// Link : https://practice.geeksforgeeks.org/problems/target-sum-1626326450/1
