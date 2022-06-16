@@ -130,4 +130,36 @@ int minCoins(int coins[], int M, int V)
 } 
 
 
-// Single Array Space Optimization: Not possible because in line: 118 curr row is necessary for calculation.
+// Single Array Optimization
+int minCoins(int coins[], int M, int V) 
+{ 
+    vector<int> prev(V+1, 0);
+    
+    for(int T=0; T<=V; T++)
+    {
+        if(T % coins[0] == 0)
+            prev[T] = T / coins[0];
+        else
+            prev[T] = 1e9;
+    }
+    
+    for(int ind=1; ind<M; ind++)
+    {
+        for(int T=0; T<=V; T++)
+        {
+            int notTake = 0 + prev[T];
+            int take = 1e9;
+            if(coins[ind] <= T)
+                take = 1 + prev[T-coins[ind]];
+            
+            prev[T] = min(take, notTake);
+        }
+    }
+    
+    int ans = prev[V];
+    if(ans >= 1e9)
+        return -1;
+    else
+        return ans;
+} 
+	 
