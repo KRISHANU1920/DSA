@@ -127,3 +127,37 @@ while(i>0 && j>0)
         j--;
 }
 return ans;
+
+
+
+// Variation 1: Longest Palindromic Subsequence
+// Question link: https://practice.geeksforgeeks.org/problems/longest-palindromic-subsequence-1612327878/1/
+int longestPalinSubseq(string A) 
+{
+    string B = A;
+    reverse(B.begin(), B.end());
+    int N = A.size();
+    
+    return lcs(N, N, A, B);
+}
+
+
+// Variation 2: Minimum Insertions needed to make string palindrome
+// Question Link: https://practice.geeksforgeeks.org/problems/form-a-palindrome1455/1/
+int countMin(string str)
+{
+    int n = str.size();
+    return n - longestPalinSubseq(str);
+}
+
+
+// Variation 3: Minimum insertions/deletions to convert str a to b
+// Question Link: https://practice.geeksforgeeks.org/problems/minimum-number-of-deletions-and-insertions0209/1/
+int minOperations(string str1, string str2) 
+{ 
+    int N = str1.size();
+    int M = str2.size();
+    
+    // ans = (N - lcs) + (M - lcs)
+    return N + M - (2 * lcs(N, M, str1, str2));
+}
