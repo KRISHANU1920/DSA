@@ -144,5 +144,5 @@ int solve(int ind, int transaction, vector<int> &price)
 int maxProfit(vector<int>&price)
 {
     // starting from transaction state 0
-    return solve(0, 1, 2, price, 0);
+    return solve(0, 0, price);
 }
