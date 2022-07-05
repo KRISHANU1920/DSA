@@ -43,4 +43,41 @@ bool isCyclic(int V, vector<int> adj[])
 }
 
 
-// Using BFS: [TC-O(N+E) and SC-O(N+E)+O(N)+O(N)]
+// Using BFS (Kahn's Algo reverse logic): [TC-O(N+E) and SC-O(N+E)+O(N)+O(N)]
+bool isCyclic(int V, vector<int> adj[]) 
+{
+    queue<int> q;
+    vector<int> inDegree(V, 0);
+    
+    // storing inDegree values of each node
+    for(int i=0; i<V; i++)
+        for(auto it: adj[i])
+            inDegree[it]++;
+            
+    // pushing the nodes into queue having inDegree '0'
+    for(int i=0; i<V; i++)
+        if(inDegree[i] == 0)
+            q.push(i);
+    
+    // calculating topological order
+    vector<int> topo;
+    int count = 0;
+    while(!q.empty())
+    {
+        int node = q.front();
+        q.pop();
+        count++;
+        
+        for(auto it: adj[node])
+        {
+            inDegree[it]--;
+            if(inDegree[it] == 0)
+                q.push(it);
+        }
+    }
+    if(count == V)
+        return false;
+    
+    else 
+        return true;
+}
